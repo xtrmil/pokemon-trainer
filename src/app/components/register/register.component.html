@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Register a user to start Collecting Pokemons</h1>
+<form [formGroup]="registerForm">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" type="text" name="username" id="username" placeholder="Enter your username"
+            formControlName="username" required minlength="3">
+        
+    </div>
+
+    <div *ngIf="username !== null">
+        <div *ngIf="(username.invalid && (username.dirty || username.touched))">
+            <div *ngIf="username.errors !== null">
+                <p *ngIf="username.errors.required">Username is required</p>
+                <p *ngIf="username.errors.minlength">Username should atleast be 3 characters</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <button class="btn btn-success btn-large" (click)="onRegisterClicked()" type="button">Register</button>
+    </div>
+
+</form>
+
+</div>
