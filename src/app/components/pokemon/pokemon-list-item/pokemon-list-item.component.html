@@ -1,4 +1,4 @@
-<div class="card mb-2" (click)="onPokemonClicked()" >
+<div class="card mb-2" (click)="onPokemonClicked(pokemonId)" >
     <img class="card-img-top" [src]='getPokemonImage()' alt="Card image cap">
     <div class="card-body">
         <h4 class="card-title">{{ pokemon.name }}</h4>

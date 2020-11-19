@@ -9,30 +9,29 @@ import { Observable } from 'rxjs';
 })
 export class PokemonDetailComponent implements OnInit {
   ngOnInit(): void {
-
+    this.getPokemonDetails();
   }
-  // @Input() pokemonId:string;
+@Input() pokemonId:string;
+pokemonDetails: any;
 
-  // pokemonDetails: any;
-  constructor() { }
+ //pokemonDetails: any;
+  constructor(private pokemonService: PokemonService) { }
 
-  // async ngOnInit(){
-  //  await this.getPokemonDetails();
-  // }
-  // public getPokemonDetails(): Observable<any> {
 
-  //   try{
-  //     this.pokemonService.getPokemonById(this.pokemonId)
-  //     .subscribe(data => {
-  //        this.pokemonDetails = data;
-  //       console.log(this.pokemonDetails);
+  public getPokemonDetails(): Observable<any> {
+
+    try{
+      this.pokemonService.getPokemonById(this.pokemonId)
+      .subscribe(data => {
+         this.pokemonDetails = data;
+        console.log(this.pokemonDetails);
      
-  //     })
-  //   }catch (e){
-  //     this.pokemonService = e.message || e;
-  //   }
-  //   return this.pokemonService.getPokemonById(this.pokemonId);
-  // }
+      })
+    }catch (e){
+      this.pokemonService = e.message || e;
+    }
+    return this.pokemonService.getPokemonById(this.pokemonId);
+  }
 
 
 }
