@@ -11,10 +11,10 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
 
   public getPokemons(): Observable<any>{
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200');
+    return this.http.get(`${environment.apiUrl}/api/v2/pokemon?limit=100`);
   }
-  // getPokemons(): Promise<any>{
-  //   return this.http.get( `${environment.apiUrl}/api/v2/pokemon/1`).toPromise();
-  // }
-  
+  getPokemonById(pokemonId:any): Observable<any>{
+    return this.http.get( `${environment.apiUrl}/api/v2/pokemon/${pokemonId}`);
+  }
+
 }

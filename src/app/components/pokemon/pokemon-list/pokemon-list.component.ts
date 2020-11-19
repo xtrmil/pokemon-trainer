@@ -12,12 +12,11 @@ export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
   surveyListError: string | undefined;
 
-  constructor(private pokemonService: PokemonService, private router: Router) { }
+  constructor(private pokemonService: PokemonService) { }
 
   async ngOnInit() {
 
     try{
-      // this.pokemons = await this.pokemonService.getPokemons();
      this.pokemonService.getPokemons()
      .subscribe(data => {
         this.pokemons = data.results;
@@ -31,7 +30,7 @@ export class PokemonListComponent implements OnInit {
     }
   }
 
-  onPokemonClicked(pokemonId: number){
-    this.router.navigate(['/pokemons',pokemonId])
-  }
+  // onPokemonClicked(pokemonId: number){
+  //   this.router.navigate(['/pokemons',pokemonId])
+  // }
 }
