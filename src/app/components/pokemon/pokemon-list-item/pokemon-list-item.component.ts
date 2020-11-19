@@ -14,6 +14,6 @@ export class PokemonListItemComponent implements OnInit {
   }
 
   onPokemonItemClicked(){
-    console.log('clicked')
+    this.clickSurvey.emit(this.pokemon.id);
   }
 }
