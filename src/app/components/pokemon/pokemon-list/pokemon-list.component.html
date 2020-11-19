@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Available surveys</h1>
-    <!-- <app-pokemon-list *ngFor="let pokemon of pokemons"></app-pokemon-list> -->
-    <app-pokemon-list></app-pokemon-list>
+    <app-pokemon-list-item *ngFor="let pokemon of pokemons" [pokemon] = "pokemon"></app-pokemon-list-item>
+
 
     <!-- <div *ngIf="surveyListError">
         {{surveyListError}}

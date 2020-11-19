@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-list-item',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-list-item.component.css']
 })
 export class PokemonListItemComponent implements OnInit {
-
+  @Input() pokemon:any;
+  @Output() clickSurvey: EventEmitter<number> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onPokemonItemClicked(){
+    console.log('clicked')
+  }
 }
