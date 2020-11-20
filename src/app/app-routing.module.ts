@@ -10,9 +10,9 @@ path: 'register',
 component: RegisterComponent
 },
 {
-  path: 'details/:pokemonId',
+  path: 'pokemon/:pokemonId',
   loadChildren: ()=> import('./components/pokemon/pokemon-detail/pokemon-detail.module').then(m => m.PokemonDetailModule),
-  component: PokemonDetailComponent
+  canActivate: [ AuthGuard ]
 },
 {
   path: 'dashboard',

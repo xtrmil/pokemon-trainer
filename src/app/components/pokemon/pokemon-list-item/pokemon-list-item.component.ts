@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, Input, OnInit,} from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { environment } from 'src/environments/environment';
@@ -16,8 +16,8 @@ import { environment } from 'src/environments/environment';
 export class PokemonListItemComponent implements OnInit {
 
   @Input() pokemon:any;
-  @Output() click: EventEmitter<string> = new EventEmitter();
-pokemonId: string;
+
+  pokemonId: string;
 
   constructor(private pokemonService: PokemonService, private router: Router) { }
   
@@ -35,7 +35,6 @@ pokemonId: string;
   }
  
   onPokemonClicked(pokemonId: string){
-    this.router.navigate(['/details',pokemonId])
-    this.click.emit(pokemonId);
+    this.router.navigate(['/pokemon',pokemonId])
   }
 }

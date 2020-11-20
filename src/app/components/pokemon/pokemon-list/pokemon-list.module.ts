@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { PokemonListComponent } from './pokemon-list.component';
 import { PokemonListItemComponent } from '../pokemon-list-item/pokemon-list-item.component';
 import { CommonModule } from '@angular/common';
-import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 
 const routes: Routes = [
     {

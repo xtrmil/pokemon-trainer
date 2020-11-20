@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 
 @Component({
@@ -20,17 +19,10 @@ export class PokemonListComponent implements OnInit {
      this.pokemonService.getPokemons()
      .subscribe(data => {
         this.pokemons = data.results;
-       console.log(data.results);
-    
      })
-      console.log("pokemons" + this.pokemons);
-      
+     
     }catch (e){
       this.pokemonService = e.message || e;
     }
   }
-
-  // onPokemonClicked(pokemonId: number){
-  //   this.router.navigate(['/pokemons',pokemonId])
-  // }
 }

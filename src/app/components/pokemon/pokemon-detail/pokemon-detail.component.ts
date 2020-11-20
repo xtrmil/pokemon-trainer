@@ -1,6 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { SessionService } from 'src/app/services/session/session.service';
+import { CollectionService } from 'src/app/services/pokemon/collection.service';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
+
+
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -8,30 +14,50 @@ import { Observable } from 'rxjs';
   styleUrls: ['./pokemon-detail.component.css']
 })
 export class PokemonDetailComponent implements OnInit {
+
   ngOnInit(): void {
-    this.getPokemonDetails();
+    
+    this.getId();
+    this.getPokemonDetails(this.pokemonId);
   }
-@Input() pokemonId:string;
-pokemonDetails: any;
-
- //pokemonDetails: any;
-  constructor(private pokemonService: PokemonService) { }
 
 
-  public getPokemonDetails(): Observable<any> {
+ 
+  pokemonId: string;
 
-    try{
+  details: any;
+  typekeys:any;
+  abilitiesKeys:any;
+  baseStatsKeys:any;
+  movesKeys:any;
+
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private collectPokemon: CollectionService) { }
+
+
+  getPokemonDetails(pokemonId:string): Observable<any> {
+
+    try {
       this.pokemonService.getPokemonById(this.pokemonId)
-      .subscribe(data => {
-         this.pokemonDetails = data;
-        console.log(this.pokemonDetails);
-     
-      })
-    }catch (e){
+        .subscribe(data => {
+          this.details = data;
+          this.typekeys = Object.keys(data.types);
+          this.abilitiesKeys = Object.keys(data.abilities);
+          this.baseStatsKeys = Object.keys(data.stats);
+          this.movesKeys = Object.keys(data.moves);
+          
+        })
+    } catch (e) {
       this.pokemonService = e.message || e;
     }
-    return this.pokemonService.getPokemonById(this.pokemonId);
+    return this.details;
   }
-
+  public getId() {
+ 
+     this.pokemonId = this.route.snapshot.paramMap.get('pokemonId');
+ 
+  }
+  public collect(pokemonName:string){
+    this.collectPokemon.CollectPokemon(pokemonName)
+  }
 
 }

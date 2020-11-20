@@ -37,8 +37,7 @@ export class RegisterComponent implements OnInit {
     this.registerError = '';
       const result: any = this.registerForm.value;
         this.session.save({
-          username: result.username,
-          pokemons: []
+          username: result.username
         });
         this.router.navigateByUrl('/dashboard');
   }
