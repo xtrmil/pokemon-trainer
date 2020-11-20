@@ -7,13 +7,15 @@ export class SessionService {
 
   constructor() { }
 
-  save(session: any){
-    localStorage.setItem('pt_session',JSON.stringify(session));
+  save(session: any) {
+    localStorage.setItem('pt_session', JSON.stringify(session));
   }
 
-  get(): any{
+  get(): any {
     const savedSession = localStorage.getItem('pt_session');
 
     return savedSession ? JSON.parse(savedSession) : false;
   }
+
+
 }
