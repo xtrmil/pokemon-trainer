@@ -19,12 +19,10 @@ export class DashboardComponent implements OnInit {
     this.collectedPokemons = this.collectionService.getAllCollected();
     let index: number;
     for (const key in this.collectedPokemons) {
-      if (this.collectedPokemons.hasOwnProperty(key)) {
-        console.log(`${this.collectedPokemons[key]}`);
-      }
 
       try {
-        this.pokemonService.getPokemonByName(`${this.collectedPokemons[key]}`)
+
+        this.pokemonService.getPokemonByName(this.collectedPokemons[key])
           .subscribe(data => {
             this.pokemon = ({
               name: data.name,

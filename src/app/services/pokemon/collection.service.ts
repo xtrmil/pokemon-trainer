@@ -25,14 +25,7 @@ export class CollectionService {
 
   }
   getAllCollected(): any{
-    let collected:string = localStorage.getItem('pokemons');
-    
-    
-    collected = collected.replace('"', '').replace('"', '').replace('"', '')
-    .replace('"', '').replace('[', '').replace(']', '');
-
-    let temp = collected.split(',');
-    console.log(temp);
-    return temp;
+    let collected:string [] = JSON.parse(localStorage.getItem('pokemons'));
+    return collected;
   }
 }
