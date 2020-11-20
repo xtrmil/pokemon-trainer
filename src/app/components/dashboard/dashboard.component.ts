@@ -16,28 +16,29 @@ export class DashboardComponent implements OnInit {
   constructor(private session: SessionService, private pokemonService: PokemonService, private collectionService: CollectionService) { }
 
   async ngOnInit() {
-    // this.collectedPokemons = this.collectionService.getAllCollected()
-    
-    // Object.keys(this.collectedPokemons).forEach(function (key) {
-    //  console.log(this.collectedPokemons[key]);
+    this.collectedPokemons = this.collectionService.getAllCollected();
+    let index: number;
+    for (const key in this.collectedPokemons) {
+      if (this.collectedPokemons.hasOwnProperty(key)) {
+        console.log(`${this.collectedPokemons[key]}`);
+      }
 
-    //   try {
-    //     // let id = this.collectedPokemons.split( ',' ).filter( Boolean ).pop();
-    //     this.pokemonService.getPokemonByName(key)
-    //       .subscribe(data => {
-    //         this.pokemon = ({
-    //           name: data.name,
-    //           url: `${environment.pokeUrl}${data.id}`
-    //         })
-    //         this.pokemons.push(this.pokemon);
+      try {
+        this.pokemonService.getPokemonByName(`${this.collectedPokemons[key]}`)
+          .subscribe(data => {
+            this.pokemon = ({
+              name: data.name,
+              url: `${environment.pokeUrl}${data.id}`
+            })
+            this.pokemons.push(this.pokemon);
 
-    //       })
+          })
 
-    //   } catch (e) {
-    //     this.pokemonService = e.message || e;
-    //   }
-    // });
-    // // JSON.stringify(this.pokemons);
+      } catch (e) {
+
+      }
+    }
+
   }
   get username() {
     return this.session.get().username;
