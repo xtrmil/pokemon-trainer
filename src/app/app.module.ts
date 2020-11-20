@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {PokemonDetailModule } from './components/pokemon/pokemon-detail/pokemon-detail.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
+
 @NgModule({
   declarations: [
     AppComponent,

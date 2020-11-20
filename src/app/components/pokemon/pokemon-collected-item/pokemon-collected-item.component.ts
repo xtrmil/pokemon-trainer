@@ -1,24 +1,20 @@
-import { Component, Input, OnInit,} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { environment } from 'src/environments/environment';
 
-
-
 @Component({
-  selector: 'app-pokemon-list-item',
-  templateUrl: './pokemon-list-item.component.html',
-  styleUrls: ['./pokemon-list-item.component.css']
+  selector: 'app-pokemon-collected-item',
+  templateUrl: './pokemon-collected-item.component.html',
+  styleUrls: ['./pokemon-collected-item.component.css']
 })
-
-
-
-export class PokemonListItemComponent implements OnInit {
+export class PokemonCollectedItemComponent implements OnInit {
 
   @Input() pokemon:any;
 
   pokemonId: string;
 
-  constructor(private router: Router) { }
+  constructor(private pokemonService: PokemonService, private router: Router) { }
   
   ngOnInit(): void {
     this.pokemonId = this.getPokemonIdfromUrl(this.pokemon.url);

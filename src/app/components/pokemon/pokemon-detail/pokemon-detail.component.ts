@@ -21,8 +21,6 @@ export class PokemonDetailComponent implements OnInit {
     this.getPokemonDetails(this.pokemonId);
   }
 
-
- 
   pokemonId: string;
 
   details: any;
@@ -57,7 +55,7 @@ export class PokemonDetailComponent implements OnInit {
  
   }
   public collect(pokemonName:string){
-    this.collectPokemon.CollectPokemon(pokemonName)
+    this.collectPokemon.collectPokemon(pokemonName)
   }
 
 }

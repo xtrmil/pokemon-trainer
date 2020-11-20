@@ -8,7 +8,7 @@ export class CollectionService {
 
   constructor() { }
   pokemonList: string[];
-  CollectPokemon(pokemon: any) {
+  collectPokemon(pokemon: any) {
     if (localStorage.getItem('pokemons') == null) {
       let temp = [];
       temp.push(pokemon)
@@ -23,5 +23,16 @@ export class CollectionService {
       localStorage.setItem('pokemons', JSON.stringify(temp));
     }
 
+  }
+  getAllCollected(): any{
+    let collected:string = localStorage.getItem('pokemons');
+    
+    
+    collected = collected.replace('"', '').replace('"', '').replace('"', '')
+    .replace('"', '').replace('[', '').replace(']', '');
+
+    let temp = collected.split(',');
+    console.log(temp);
+    return temp;
   }
 }
