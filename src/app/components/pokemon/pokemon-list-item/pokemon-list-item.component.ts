@@ -1,6 +1,5 @@
 import { Component, Input, OnInit,} from '@angular/core';
 import { Router } from '@angular/router';
-import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { environment } from 'src/environments/environment';
 
 
@@ -19,7 +18,7 @@ export class PokemonListItemComponent implements OnInit {
 
   pokemonId: string;
 
-  constructor(private pokemonService: PokemonService, private router: Router) { }
+  constructor(private router: Router) { }
   
   ngOnInit(): void {
     this.pokemonId = this.getPokemonIdfromUrl(this.pokemon.url);

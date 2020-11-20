@@ -8,12 +8,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {PokemonDetailModule } from './components/pokemon/pokemon-detail/pokemon-detail.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
-import { PokemonCollectedItemComponent } from './components/pokemon/pokemon-collected-item/pokemon-collected-item.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
-    PokemonCollectedItemComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
