@@ -1,0 +1,11 @@
+<p>pokemon-collected-item works!</p>
+<div class="card mb-2" (click)="onPokemonClicked(pokemonId)" >
+    <img class="card-img-top" [src]='getPokemonImage()' alt="Card image cap">
+    <div class="card-body">
+        <h4 class="card-title">{{ pokemon.name }}</h4>
+        <small class="card-subtitle">Creator: {{ pokemon.name }}</small>
+        <p class="card-text">{{ pokemon.name }}</p>
+    </div>
+</div>
+
+
