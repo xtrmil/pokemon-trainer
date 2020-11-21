@@ -13,26 +13,36 @@ export class DashboardComponent implements OnInit {
   collectedPokemons: any[] = [];
   pokemon: any;
   pokemons: any[] = [];
+  haveCollected: boolean;
   constructor(private pokemonService: PokemonService, private collectionService: CollectionService) { }
 
   async ngOnInit() {
-    this.collectedPokemons = this.collectionService.getAllCollected();
-
-    for (const key in this.collectedPokemons) {
-
-      try {
-
-        this.pokemonService.getPokemonByName(this.collectedPokemons[key])
-          .subscribe(data => {
-            this.pokemon = ({
-              name: data.name,
-              url: `${environment.pokeUrl}${data.id}`
-            })
-            this.pokemons.push(this.pokemon);
-          })
-      } catch (e) {
-        e.message;
-      }
+    if(this.collectionService.getAllCollected() == null){
+      this.haveCollected = false;
+    }else{
+      this.haveCollected = true;
     }
+    this.collectedPokemons = this.collectionService.getAllCollected();
+   
+      this.haveCollected == true;
+      for (const key in this.collectedPokemons) {
+
+        try {
+  
+          this.pokemonService.getPokemonByName(this.collectedPokemons[key])
+            .subscribe(data => {
+              this.pokemon = ({
+                name: data.name,
+                url: `${environment.pokeUrl}${data.id}`
+              })
+              this.pokemons.push(this.pokemon);
+            })
+        } catch (e) {
+          e.message;
+        }
+      }
+
+    
+    
   }
 }
