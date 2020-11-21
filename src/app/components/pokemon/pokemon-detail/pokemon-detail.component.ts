@@ -2,11 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { SessionService } from 'src/app/services/session/session.service';
 import { CollectionService } from 'src/app/services/pokemon/collection.service';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -29,7 +26,7 @@ export class PokemonDetailComponent implements OnInit {
   baseStatsKeys:any;
   movesKeys:any;
 
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private collectPokemon: CollectionService) { }
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private collectPokemon: CollectionService, private location: Location) { }
 
 
   getPokemonDetails(pokemonId:string): Observable<any> {
@@ -50,12 +47,17 @@ export class PokemonDetailComponent implements OnInit {
     return this.details;
   }
   public getId() {
- 
      this.pokemonId = this.route.snapshot.paramMap.get('pokemonId');
- 
   }
   public collect(pokemonName:string){
     this.collectPokemon.collectPokemon(pokemonName)
+  }
+
+  public getImage():string {
+    return this.pokemonService.getPokemonImage(this.pokemonId);
+  }
+    back(): void {
+    this.location.back();
   }
 
 }

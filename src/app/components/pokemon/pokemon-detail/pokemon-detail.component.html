@@ -1,37 +1,82 @@
-<h1>Base Stats</h1>
-<div *ngIf="details">
-    <div>Types:
-        <ul *ngFor="let key of typekeys">
-            {{details.types[key].type.name}}
+<div class="ml-4" *ngIf="details">
+    <div class="row">
+    <h3 class="ml-4" style="text-transform:capitalize;"><b>{{details.name}}</b></h3>
+    <img class="img" [src]='getImage()'  style="width:200px;height:200px;">
+    
+    <div class="row">
+        <div class="card ml-1" style="width: 18rem;">
+            <div class="card-header">
+                <h4>Base Stats</h4>
+              </div>
+            
+            <div class="card-body">
+                
+                <div>
+                    <div class="row ml-2">
+                        <b>Types:&nbsp;</b>
+                   
+                       <p *ngFor="let key of typekeys" style="height:30px;"> {{details.types[key].type.name}},</p>
+                   
+                    </div>
+                </div>
 
-        </ul>
+                <div><b>BaseStats:</b><br><br>
+                    <ul *ngFor="let key of baseStatsKeys">
+                        <div class="row border-bottom">
+                            <div class="col">
+                        <i>{{details.stats[key].stat.name}}:</i>
+                    </div>
+                    <div class="col">
+                         {{details.stats[key].base_stat}}
+                    </div>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="card m-1" style="width: 18rem;">
+            <div class="card-header">
+                <h4>Profile</h4>
+              </div>
+            <div class="card-body">
+                <div><b>Base Experience:</b> {{details.base_experience}}</div>
+                <br>
+                <div><b>Height:</b> {{details.height}}</div>
+                <br>
+                <div><b>Weight:</b> {{details.weight}}</div>
+                <br>
+                <div class="row ml-2">
+                    <b>Abilites:&nbsp;</b>
+                    <p *ngFor="let key of abilitiesKeys">
+                        {{details.abilities[key].ability.name}},&nbsp;
+
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card m-1" style="width: 36rem;">
+            <div class="card-header">
+                <h4>Moves</h4>
+              </div>
+            <div class="card-body">
+                
+                <div class="row">
+                    <p *ngFor="let key of movesKeys">{{details.moves[key].move.name}},&nbsp; </p>
+                </div>
+            </div>
+        </div>
+ 
     </div>
-    <div>BaseStats:
-        <ul *ngFor="let key of baseStatsKeys">
-            {{details.stats[key].stat.name}}: {{details.stats[key].base_stat}}
+        
 
-        </ul>
-    </div>
-    <div>Name: {{details.name}}</div>
-
-
-    <h1>Profile</h1>
-    <div>Height: {{details.height}}</div>
-    <div>Weight: {{details.weight}}</div>
-    <div>Abilites:
-        <ul *ngFor="let key of abilitiesKeys">
-            {{details.abilities[key].ability.name}}
-
-        </ul>
-    </div>
-    <div>Base Experience: {{details.base_experience}}</div>
-
-    <h1>Moves</h1>
-    <div>
-        <ul *ngFor="let key of movesKeys">
-            {{details.moves[key].move.name}}
-        </ul>
-    </div>
-
-    <button (click)="collect(details.name)">Collect Pokemon!</button>
+    
 </div>
+
+
+<button class="btn btn-primary mr-2 mt-2" (click)="collect(details.name)">Collect Pokemon!</button>
+<button class="btn btn-warning mr-2 mt-2" (click)="back()">Back</button>

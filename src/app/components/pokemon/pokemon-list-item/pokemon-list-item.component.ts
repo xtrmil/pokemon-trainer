@@ -1,8 +1,6 @@
 import { Component, Input, OnInit,} from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
-
-
+import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list-item',
@@ -18,22 +16,17 @@ export class PokemonListItemComponent implements OnInit {
 
   pokemonId: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private pokemonService: PokemonService) { }
   
   ngOnInit(): void {
-    this.pokemonId = this.getPokemonIdfromUrl(this.pokemon.url);
+    this.pokemonId = this.pokemonService.getPokemonIdfromUrl(this.pokemon.url);
   }
 
-  public getPokemonIdfromUrl (url:string):string{
-    const id = url.split( '/' ).filter( Boolean ).pop();
-    return id;
-  }
-
-  public getPokemonImage():string {
-    return `${environment.imgUrl}${this.pokemonId}.png`;
+  public getImage():string {
+    return this.pokemonService.getPokemonImage(this.pokemonId);
   }
  
   onPokemonClicked(pokemonId: string){
-    this.router.navigate(['/pokemon',pokemonId])
+    this.pokemonService.navigateToPokemonPage(pokemonId);
   }
 }

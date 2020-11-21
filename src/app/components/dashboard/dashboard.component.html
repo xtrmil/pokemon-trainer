@@ -1,4 +1,6 @@
-<h1></h1>
-<h4>Welcome back, {{username}}</h4>
 
-<app-pokemon-collected-item *ngFor="let pokemon of pokemons" [pokemon] = "pokemon"></app-pokemon-collected-item>
+<div class="container">
+    <h2>Collected Pokemons</h2>
+    <br>
+    <app-pokemon-collected-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-collected-item>
+</div>
