@@ -1,4 +1,30 @@
-#image{
-    width:200px;
-    height:200px;
+#pokemonImage{
+    width:300px;
+    height:300px;
+}
+
+#imageCard{
+    width: 18rem;
+    height: 30rem;
+}
+#cardTitle{
+    text-transform:capitalize;
+}
+
+#detailCard{
+    width: 18rem;
+    height: 30rem;
+}
+
+#movesCard{
+    margin: auto;
+    height: 30rem;
+}
+
+#scrollable{
+    width: 31rem;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 395px;
 }
