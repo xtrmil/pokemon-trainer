@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PokemonDetailComponent } from './components/pokemon/pokemon-detail/pokemon-detail.component';
+import { PokemonListComponent } from './components/pokemon/pokemon-list/pokemon-list.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -21,7 +21,7 @@ component: RegisterComponent
 },
 {
   path: 'pokemons',
-  loadChildren: ()=> import('./components/pokemon/pokemon-list/pokemon-list.module').then(m=> m.PokemonListModule),
+  component: PokemonListComponent,
   canActivate: [ AuthGuard ]
 },
 {

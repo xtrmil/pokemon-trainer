@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PokemonDetailComponent } from './pokemon-detail.component';
 
 describe('PokemonDetailComponent', () => {

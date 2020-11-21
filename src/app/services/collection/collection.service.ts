@@ -1,4 +1,3 @@
-import { temporaryAllocator } from '@angular/compiler/src/render3/view/util';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,6 +7,7 @@ export class CollectionService {
 
   constructor() { }
   pokemonList: string[];
+
   collectPokemon(pokemon: any) {
     if (localStorage.getItem('pokemons') == null) {
       let temp = [];
@@ -16,16 +16,17 @@ export class CollectionService {
     } else {
       let temp = [];
       temp = JSON.parse(localStorage.getItem('pokemons')) || [];
-      if (!temp.includes(pokemon)) {
+      if (temp.includes(pokemon)) {
+        alert("ERROR: Pokemon allready collected")
+      } else {
         temp.push(pokemon);
+        alert("Pokemons collected: " + pokemon);
       }
-      alert(temp);
       localStorage.setItem('pokemons', JSON.stringify(temp));
     }
-
   }
-  getAllCollected(): any{
-    let collected:string [] = JSON.parse(localStorage.getItem('pokemons'));
+  getAllCollected(): any {
+    let collected: string[] = JSON.parse(localStorage.getItem('pokemons'));
     return collected;
   }
 }

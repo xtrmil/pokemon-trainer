@@ -13,9 +13,6 @@ export class SessionService {
 
   get(): any {
     const savedSession = localStorage.getItem('pt_session');
-
     return savedSession ? JSON.parse(savedSession) : false;
   }
-
-
 }

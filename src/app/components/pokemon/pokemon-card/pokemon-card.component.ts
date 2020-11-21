@@ -1,22 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 
 @Component({
-  selector: 'app-pokemon-collected-item',
-  templateUrl: './pokemon-collected-item.component.html',
-  styleUrls: ['./pokemon-collected-item.component.css']
+  selector: 'app-pokemon-card',
+  templateUrl: './pokemon-card.component.html',
+  styleUrls: ['./pokemon-card.component.css']
 })
-export class PokemonCollectedItemComponent implements OnInit {
+export class PokemonCardComponent implements OnInit {
 
   @Input() pokemon:any;
 
   pokemonId: string;
 
-  constructor(private pokemonService: PokemonService, private router: Router) { }
+  constructor(private pokemonService: PokemonService) { }
   
   ngOnInit(): void {
-    this.pokemonId = this.pokemonService.getPokemonIdfromUrl(this.pokemon.url);
+    this.pokemonId = this.pokemon.url.split( '/' ).filter( Boolean ).pop();
   }
 
   public getImage():string {

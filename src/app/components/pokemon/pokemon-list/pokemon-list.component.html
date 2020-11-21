@@ -2,7 +2,8 @@
     <h2>Pokemons</h2>
     <div class="container">
         <div class="row">
-            <app-pokemon-list-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-list-item>
+            <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-card>
         </div>
     </div>
 </div>
+

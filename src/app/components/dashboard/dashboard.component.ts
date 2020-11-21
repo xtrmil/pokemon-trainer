@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CollectionService } from 'src/app/services/pokemon/collection.service';
+import { CollectionService } from 'src/app/services/collection/collection.service';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
-import { SessionService } from 'src/app/services/session/session.service';
 import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   collectedPokemons: any[] = [];
   pokemon: any;
   pokemons: any[] = [];
-  constructor(private session: SessionService, private pokemonService: PokemonService, private collectionService: CollectionService) { }
+  constructor(private pokemonService: PokemonService, private collectionService: CollectionService) { }
 
   async ngOnInit() {
     this.collectedPokemons = this.collectionService.getAllCollected();
