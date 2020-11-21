@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,11 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {PokemonDetailModule } from './components/pokemon/pokemon-detail/pokemon-detail.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
+import { PokemonListComponent } from './components/pokemon/pokemon-list/pokemon-list.component';
+import { PokemonCardModule } from './components/pokemon/pokemon-card/pokemon-card.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    PokemonListComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -21,8 +25,9 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     ReactiveFormsModule,
     HttpClientModule,
     PokemonDetailModule,
-    DashboardModule
-    
+    DashboardModule,
+    PokemonCardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

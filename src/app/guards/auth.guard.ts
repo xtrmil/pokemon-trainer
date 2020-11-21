@@ -8,21 +8,21 @@ import { SessionService } from '../services/session/session.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private session: SessionService, private router: Router){
+  constructor(private session: SessionService, private router: Router) {
 
   }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if(this.session.get() !== false) { 
-      return true; 
-    }else{
+    if (this.session.get() !== false) {
+      return true;
+    } else {
       this.router.navigateByUrl('/register');
 
       return false;
     }
 
   }
-  
+
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { CollectionService } from 'src/app/services/pokemon/collection.service';
 import { Location } from '@angular/common';
+import { CollectionService } from 'src/app/services/collection/collection.service';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -13,7 +13,6 @@ import { Location } from '@angular/common';
 export class PokemonDetailComponent implements OnInit {
 
   ngOnInit(): void {
-    
     this.getId();
     this.getPokemonDetails(this.pokemonId);
   }
