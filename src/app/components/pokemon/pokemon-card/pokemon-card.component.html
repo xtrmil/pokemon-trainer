@@ -1,8 +1,8 @@
-<div class="card mb-2" style="width:175px;" (click)="onPokemonClicked(pokemonId)" >
+<div class="card mb-2" style="width:175px;" (click)="onPokemonClicked(pokemonId)" id="pokemonCard">
     <div class="card-header">
-        <h4 class="card-title text-center" style="text-transform:capitalize; font-size:large;">{{ pokemon.name }}</h4>
+        <h4 class="card-title text-center" id="cardTitle">{{ pokemon.name }}</h4>
     </div>
-    <img class="card-img-top" [src]='getImage()' alt="Card image cap" style="width:150px;height:150px;">
+    <img class="card-img-top" [src]='getImage()' alt="Card image cap" id="pokemonImage">
     <div class="card-body">
     </div>
 </div>

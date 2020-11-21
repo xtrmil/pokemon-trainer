@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CollectionService } from 'src/app/services/collection/collection.service';
 import { SessionService } from 'src/app/services/session/session.service';
 
 @Component({
@@ -19,14 +20,15 @@ export class RegisterComponent implements OnInit {
   registerError: string | undefined;
 
 
-  constructor(private session: SessionService, private router: Router) {
+  constructor(private session: SessionService, private router: Router, private collectionService: CollectionService) {
 
     if (this.session.get() !== false) {
-      this.router.navigateByUrl('/dashboard');
+      this.router.navigateByUrl('/collection');
     }
   }
 
   ngOnInit(): void {
+    localStorage.clear();   // removes leftover pokemons if pt-session has been removed.
   }
 
   get username() {
@@ -39,6 +41,6 @@ export class RegisterComponent implements OnInit {
     this.session.save({
       username: result.username
     });
-    this.router.navigateByUrl('/dashboard');
+    this.router.navigateByUrl('/collection');
   }
 }
