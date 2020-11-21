@@ -7,12 +7,10 @@ import { SessionService } from './services/session/session.service';
   styleUrls: ['./app.component.css']
 })
 
-
-
 export class AppComponent {
   title = 'pokemon-trainer';
-  constructor(private session: SessionService){}
-  
+  constructor(private session: SessionService) { }
+
   get username() {
     return this.session.get().username;
   }

@@ -1,3 +1,25 @@
-#image{
-    width:200px;
+#pokemonImage{
+    width:300px;
+    height:300px;
 }
+
+#imageCard{
+    width: 18rem;
+    height: 30rem;
+}
+
+#detailCard{
+    width: 18rem;
+    height: 30rem;
+}
+
+#movesCard{
+    margin: auto;
+    height: 30rem;
+}
+
+#scrollable{
+    width: 30rem;
+    overflow-y: auto;
+    max-height: 390px;
+  }
