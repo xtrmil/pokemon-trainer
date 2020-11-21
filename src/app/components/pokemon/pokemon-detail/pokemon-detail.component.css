@@ -19,13 +19,13 @@
 #movesCard{
     margin: auto;
     height: 30rem;
+   
 }
 
-.scrollable{
+#scrollable{
     width: 31rem;
 
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 395px;
-   
 }

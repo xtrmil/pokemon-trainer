@@ -73,9 +73,9 @@
             <div class="card-header">
                 <h4>Moves</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body" id="movesBody">
                 <div class="scrollable" id="scrollable">
-                <div class="row ml-2">
+                <div class="row ml-1 mr-1">
                     
                         <span *ngFor="let key of movesKeys; last as isLast">{{details.moves[key].move.name}}<span *ngIf="!isLast">,&nbsp;</span> </span>
                         
