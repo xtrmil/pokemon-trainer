@@ -12,50 +12,54 @@ import { CollectionService } from 'src/app/services/collection/collection.servic
 })
 export class PokemonDetailComponent implements OnInit {
 
+  pokemonId: string;
+  details: any;
+  typekeys: any;
+  abilitiesKeys: any;
+  baseStatsKeys: any;
+  movesKeys: any;
+  areCollecting: boolean;
+
   ngOnInit(): void {
-    this.getId();
-    this.getPokemonDetails(this.pokemonId);
+
+    this.getPokemonDetails(this.getId());
+    this.areCollecting = this.collectionService.getCollectionStatus();
   }
 
-  pokemonId: string;
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private collectionService: CollectionService, private location: Location) { }
 
-  details: any;
-  typekeys:any;
-  abilitiesKeys:any;
-  baseStatsKeys:any;
-  movesKeys:any;
-
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private collectPokemon: CollectionService, private location: Location) { }
-
-
-  getPokemonDetails(pokemonId:string): Observable<any> {
+  getPokemonDetails(pokemonId: string): Observable<any> {
 
     try {
-      this.pokemonService.getPokemonById(this.pokemonId)
+      this.pokemonService.getPokemonById(pokemonId)
         .subscribe(data => {
           this.details = data;
           this.typekeys = Object.keys(data.types);
           this.abilitiesKeys = Object.keys(data.abilities);
           this.baseStatsKeys = Object.keys(data.stats);
           this.movesKeys = Object.keys(data.moves);
-          
+
         })
     } catch (e) {
       this.pokemonService = e.message || e;
     }
+
     return this.details;
   }
   public getId() {
-     this.pokemonId = this.route.snapshot.paramMap.get('pokemonId');
+    return this.pokemonId = this.route.snapshot.paramMap.get('pokemonId');
   }
-  public collect(pokemonName:string){
-    this.collectPokemon.collectPokemon(pokemonName)
+  public collect(pokemonName: string) {
+    this.collectionService.collectPokemon(pokemonName)
   }
 
-  public getImage():string {
+  public getImage(): string {
     return this.pokemonService.getPokemonImage(this.pokemonId);
   }
-    back(): void {
+  public setCollectionStatus(areCollecting: boolean) {
+    this.areCollecting = areCollecting;
+  }
+  back(): void {
     this.location.back();
   }
 

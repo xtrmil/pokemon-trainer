@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {PokemonDetailModule } from './components/pokemon/pokemon-detail/pokemon-detail.module';
-import { DashboardModule } from './components/dashboard/dashboard.module';
+import { CollectionDashboardModule } from './components/collection-dashboard/collection-dashboard.module';
 import { PokemonListComponent } from './components/pokemon/pokemon-list/pokemon-list.component';
 import { PokemonCardModule } from './components/pokemon/pokemon-card/pokemon-card.module';
 
@@ -25,7 +25,7 @@ import { PokemonCardModule } from './components/pokemon/pokemon-card/pokemon-car
     ReactiveFormsModule,
     HttpClientModule,
     PokemonDetailModule,
-    DashboardModule,
+    CollectionDashboardModule,
     PokemonCardModule
 
   ],

@@ -1,0 +1,14 @@
+#pokemonCard{
+    cursor:pointer;  
+}
+
+#pokemonImage{
+    align-self: center;
+    width:125px;
+    /* height:150px; */
+}
+
+#cardTitle{
+    font-size: 20px;
+    text-transform:capitalize;
+}

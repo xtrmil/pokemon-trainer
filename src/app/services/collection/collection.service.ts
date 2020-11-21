@@ -7,6 +7,7 @@ export class CollectionService {
 
   constructor() { }
   pokemonList: string[];
+  areCollecting:boolean;
 
   collectPokemon(pokemon: any) {
     if (localStorage.getItem('pokemons') == null) {
@@ -29,5 +30,11 @@ export class CollectionService {
   getAllCollected(): any {
     let collected: string[] = JSON.parse(localStorage.getItem('pokemons'));
     return collected;
+  }
+  setCollectionStatus(areCollecting:boolean){
+    this.areCollecting = areCollecting;
+  }
+  getCollectionStatus(): boolean{
+    return this.areCollecting;
   }
 }

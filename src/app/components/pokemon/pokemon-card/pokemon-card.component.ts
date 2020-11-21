@@ -8,21 +8,21 @@ import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 })
 export class PokemonCardComponent implements OnInit {
 
-  @Input() pokemon:any;
+  @Input() pokemon: any;
 
   pokemonId: string;
 
   constructor(private pokemonService: PokemonService) { }
-  
+
   ngOnInit(): void {
-    this.pokemonId = this.pokemon.url.split( '/' ).filter( Boolean ).pop();
+    this.pokemonId = this.pokemon.url.split('/').filter(Boolean).pop();
   }
 
-  public getImage():string {
+  public getImage(): string {
     return this.pokemonService.getPokemonImage(this.pokemonId);
   }
- 
-  onPokemonClicked(pokemonId: string){
+
+  onPokemonClicked(pokemonId: string) {
     this.pokemonService.navigateToPokemonPage(pokemonId);
   }
 }

@@ -1,0 +1,9 @@
+<div class="container">
+    <h2>Your collected pokemons</h2>
+    <br>
+
+    <div *ngIf="haveCollected == false">Head over to Catalogue to collect your first Pokemon</div>
+    <div class="row">
+        <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-card>
+    </div>
+</div>

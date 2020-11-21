@@ -1,29 +1,31 @@
 <div class="container">
-    
-<form [formGroup]="registerForm">
-    <div class="form-group row">
-    <h3>Register a user to start Collecting Pokemons</h3>
-</div>
-    <div class="form-group row">
-        <div class="col-xs-3">
-        <input class="form-control" type="text" name="username" id="username" placeholder="Enter your username"
-            formControlName="username" required minlength="3">
-        </div>
-    </div>
 
-    <div *ngIf="username !== null">
-        <div *ngIf="(username.invalid && (username.dirty || username.touched))">
-            <div *ngIf="username.errors !== null">
-                <p *ngIf="username.errors.required">Username is required</p>
-                <p *ngIf="username.errors.minlength">Username should at least be 3 characters</p>
+    <form [formGroup]="registerForm">
+        <div class="form-group row">
+            <h3>Register a user to start Collecting Pokemons</h3>
+        </div>
+        <div class="form-group row">
+            <div class="col-xs-3">
+                <input class="form-control" type="text" name="username" id="username" placeholder="Enter your username"
+                    formControlName="username" required minlength="3">
             </div>
         </div>
-    </div>
-    
-    <div class="form-group row">
-        <button class="btn btn-success btn-large" (click)="onRegisterClicked()" type=""button [disabled]="isLoading || registerForm.invalid">Register</button>
-    </div>
 
-</form>
+        <div *ngIf="username !== null">
+            <div *ngIf="(username.invalid && (username.dirty || username.touched))">
+                <div *ngIf="username.errors !== null">
+                    <p *ngIf="username.errors.required">Username is required</p>
+                    <p *ngIf="username.errors.minlength">Username should at least be 3 characters</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <button type="button" class="btn btn-success btn-large" (click)="onRegisterClicked()"
+                [disabled]="isLoading || registerForm.invalid">Register</button>
+        </div>
+
+
+    </form>
 
 </div>

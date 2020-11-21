@@ -15,12 +15,12 @@ component: RegisterComponent
   canActivate: [ AuthGuard ]
 },
 {
-  path: 'dashboard',
-  loadChildren: ()=> import('./components/dashboard/dashboard.module').then(m => m.DashboardModule),
+  path: 'collection',
+  loadChildren: ()=> import('./components/collection-dashboard/collection-dashboard.module').then(m => m.CollectionDashboardModule),
   canActivate: [ AuthGuard ]
 },
 {
-  path: 'pokemons',
+  path: 'catalogue',
   component: PokemonListComponent,
   canActivate: [ AuthGuard ]
 },

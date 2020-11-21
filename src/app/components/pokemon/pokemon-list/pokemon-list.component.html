@@ -1,9 +1,8 @@
 <div *ngIf="true" class="container">
-    <h2>Pokemons</h2>
+    <h2>Available Pokemons</h2>
     <div class="container">
         <div class="row">
             <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokemon-card>
         </div>
     </div>
 </div>
-
