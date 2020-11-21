@@ -7,6 +7,9 @@
     width: 18rem;
     height: 30rem;
 }
+#cardTitle{
+    text-transform:capitalize;
+}
 
 #detailCard{
     width: 18rem;
@@ -18,8 +21,11 @@
     height: 30rem;
 }
 
-#scrollable{
-    width: 30rem;
+.scrollable{
+    width: 31rem;
+
     overflow-y: auto;
-    max-height: 390px;
-  }
+    overflow-x: hidden;
+    max-height: 395px;
+   
+}

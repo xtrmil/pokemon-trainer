@@ -1,7 +1,7 @@
 <div *ngIf="details">
     <!-- Picture Card -->
 
-    <div class="row">
+    <div class="row ml-2">
         <div class="card ml-1" id="detailCard">
             <div class="card-header">
                 <h5 class="card-title text-center" id="cardTitle">{{ details.name }}</h5>
@@ -75,9 +75,9 @@
             </div>
             <div class="card-body">
                 <div class="scrollable" id="scrollable">
-                <div class="row" id="movesCard">
+                <div class="row ml-2">
                     
-                        <p *ngFor="let key of movesKeys; last as isLast">{{details.moves[key].move.name}}<span *ngIf="!isLast">,&nbsp;</span> </p>
+                        <span *ngFor="let key of movesKeys; last as isLast">{{details.moves[key].move.name}}<span *ngIf="!isLast">,&nbsp;</span> </span>
                         
                     </div>
                 </div>
@@ -90,8 +90,8 @@
 
 
 
-    <div class="row">
-        <button class="btn btn-primary mr-2" (click)="collect(details.name)" [disabled]="!areCollecting">Collect
+    <div class="row ml-3">
+        <button *ngIf="areCollecting ==true" class="btn btn-primary mr-2" (click)="collect(details.name)" >Collect
             Pokemon!</button>
         <button class="btn btn-warning mr-2" (click)="back()">Back</button>
     </div>
