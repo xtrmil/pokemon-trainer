@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   async ngOnInit() {
     this.collectedPokemons = this.collectionService.getAllCollected();
-    let index: number;
+
     for (const key in this.collectedPokemons) {
 
       try {
@@ -29,17 +29,10 @@ export class DashboardComponent implements OnInit {
               url: `${environment.pokeUrl}${data.id}`
             })
             this.pokemons.push(this.pokemon);
-
           })
-
       } catch (e) {
-
+        e.message;
       }
     }
-
   }
-  get username() {
-    return this.session.get().username;
-  }
-
 }

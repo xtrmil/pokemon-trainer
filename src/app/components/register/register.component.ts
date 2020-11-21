@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
     username: new FormControl('', [Validators.required,Validators.minLength(3)])
   });
 
+  isLoading: boolean = false;
+
   registerError: string | undefined;
 
 

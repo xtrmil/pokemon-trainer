@@ -34,4 +34,8 @@ export class PokemonService {
   navigateToPokemonPage(pokemonId: string){
     this.router.navigate(['/pokemon',pokemonId])
   }
+
+  public capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 }

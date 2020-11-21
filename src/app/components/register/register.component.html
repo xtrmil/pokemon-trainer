@@ -12,13 +12,13 @@
         <div *ngIf="(username.invalid && (username.dirty || username.touched))">
             <div *ngIf="username.errors !== null">
                 <p *ngIf="username.errors.required">Username is required</p>
-                <p *ngIf="username.errors.minlength">Username should atleast be 3 characters</p>
+                <p *ngIf="username.errors.minlength">Username should at least be 3 characters</p>
             </div>
         </div>
     </div>
     <br>
     <div class="form-group">
-        <button class="btn btn-success btn-large" (click)="onRegisterClicked()" type="button">Register</button>
+        <button class="btn btn-success btn-large" (click)="onRegisterClicked()" type=""button [disabled]="isLoading || registerForm.invalid">Register</button>
     </div>
 
 </form>
