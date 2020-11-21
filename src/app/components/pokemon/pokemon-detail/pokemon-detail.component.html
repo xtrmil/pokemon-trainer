@@ -28,9 +28,10 @@
 
     <h1>Moves</h1>
     <div>
-        <ul *ngFor="let key of movesKeys">
+        <!-- <ul *ngFor="let key of movesKeys">
             {{details.moves[key].move.name}}
-        </ul>
+        </ul> -->
+        <p  *ngFor="let key of movesKeys">{{details.moves[key].move.name}}, </p>
     </div>
 
     <button (click)="collect(details.name)">Collect Pokemon!</button>

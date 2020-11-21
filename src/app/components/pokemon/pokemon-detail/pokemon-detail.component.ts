@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { SessionService } from 'src/app/services/session/session.service';
 import { CollectionService } from 'src/app/services/pokemon/collection.service';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-
-
 
 @Component({
   selector: 'app-pokemon-detail',
