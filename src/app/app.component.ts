@@ -14,10 +14,11 @@ export class AppComponent {
   get username() {
     return this.session.get().username;
   }
-  status: boolean = true;
- 
-clickEvent(){
-    this.status = !this.status;       
-}
+  
 
+  status: boolean = true;
+
+  clickEvent(){
+    this.status = !this.status;
+  }
 }

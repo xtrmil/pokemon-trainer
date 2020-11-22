@@ -4,5 +4,3 @@ export const environment = {
   imgUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
   pokeUrl: 'https://pokeapi.co/api/v2/pokemon/'
 };
-
-

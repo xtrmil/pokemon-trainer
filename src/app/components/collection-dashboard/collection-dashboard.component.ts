@@ -3,7 +3,6 @@ import { CollectionService } from 'src/app/services/collection/collection.servic
 import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 import { environment } from 'src/environments/environment';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './collection-dashboard.component.html',
@@ -16,7 +15,7 @@ export class CollectionDashboardComponent implements OnInit {
   haveCollected: boolean;
   constructor(private pokemonService: PokemonService, private collectionService: CollectionService) { }
 
- ngOnInit() {
+  ngOnInit() {
     if (this.collectionService.getAllCollected() == null) {
       this.haveCollected = false;
     } else {

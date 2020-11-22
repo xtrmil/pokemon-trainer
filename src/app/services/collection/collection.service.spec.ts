@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { CollectionService } from './collection.service';
 
 describe('CollectionService', () => {
