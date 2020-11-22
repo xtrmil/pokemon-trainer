@@ -20,15 +20,15 @@ export class PokemonDetailComponent implements OnInit {
   movesKeys: any;
   areCollecting: boolean;
   buttonText: string = 'Collect';
-  clicked:boolean;
+  clicked: boolean;
 
   ngOnInit(): void {
 
     this.getPokemonDetails(this.getId());
-    if(this.areCollecting == false){
+    if (this.areCollecting == false) {
       this.buttonText = 'Collected';
     }
-    if(localStorage.getItem('pokemons') == undefined){
+    if (localStorage.getItem('pokemons') == undefined) {
       this.areCollecting = true;
     }
   }
@@ -45,10 +45,10 @@ export class PokemonDetailComponent implements OnInit {
           this.abilitiesKeys = Object.keys(data.abilities);
           this.baseStatsKeys = Object.keys(data.stats);
           this.movesKeys = Object.keys(data.moves);
- 
-          if(this.collectionService.getAllCollected().includes(data.name) == false){
+
+          if (this.collectionService.getAllCollected().includes(data.name) == false) {
             this.areCollecting = true;
-          }else{
+          } else {
             this.areCollecting = false;
           }
 
@@ -59,15 +59,15 @@ export class PokemonDetailComponent implements OnInit {
 
     return this.details;
   }
-  public getId() {
+  getId() {
     return this.pokemonId = this.route.snapshot.paramMap.get('pokemonId');
   }
-  public collect(pokemonName: string) {
+  collect(pokemonName: string) {
     this.collectionService.collectPokemon(pokemonName);
     this.buttonText = "Collected";
   }
 
-  public getImage(): string {
+  getImage(): string {
     return this.pokemonService.getPokemonImage(this.pokemonId);
   }
 

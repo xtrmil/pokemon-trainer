@@ -13,7 +13,7 @@ export class CollectionService {
     if (localStorage.getItem('pokemons') == null) {
       let temp = [];
       temp.push(pokemon)
-      
+
       localStorage.setItem('pokemons', JSON.stringify(temp));
     } else {
       let temp = [];

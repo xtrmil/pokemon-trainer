@@ -9,7 +9,6 @@ import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 export class PokemonCardComponent implements OnInit {
 
   @Input() pokemon: any;
-
   pokemonId: string;
 
   constructor(private pokemonService: PokemonService) { }
@@ -18,7 +17,7 @@ export class PokemonCardComponent implements OnInit {
     this.pokemonId = this.pokemon.url.split('/').filter(Boolean).pop();
   }
 
-  public getImage(): string {
+  getImage(): string {
     return this.pokemonService.getPokemonImage(this.pokemonId);
   }
 

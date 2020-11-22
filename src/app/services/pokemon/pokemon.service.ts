@@ -11,17 +11,19 @@ export class PokemonService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  public getPokemons(): Observable<any> {
+  getPokemons(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/api/v2/pokemon?limit=100`);
   }
+  
   getPokemonById(pokemonId: any): Observable<any> {
     return this.http.get(`${environment.apiUrl}/api/v2/pokemon/${pokemonId}`);
   }
+
   getPokemonByName(pokemonName: any): Observable<any> {
     return this.http.get(`${environment.apiUrl}/api/v2/pokemon/${pokemonName}`);
   }
 
-  public getPokemonImage(id: string): string {
+  getPokemonImage(id: string): string {
     return `${environment.imgUrl}${id}.png`;
   }
 
