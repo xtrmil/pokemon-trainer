@@ -10,7 +10,6 @@ import { CollectionDashboardModule } from './components/collection-dashboard/col
 import { PokemonCatalogueComponent } from './components/pokemon/pokemon-catalogue/pokemon-catalogue.component';
 import { PokemonCardModule } from './components/pokemon/pokemon-card/pokemon-card.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

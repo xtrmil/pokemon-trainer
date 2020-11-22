@@ -89,7 +89,8 @@
     </div>
 
     <div class="row ml-3">
-        <button *ngIf="areCollecting ==true" class="btn btn-primary mr-2" (click)="collect(details.name)">Collect
+        <button *ngIf="areCollecting ==true" class="btn btn-primary mr-2" (click)="collect(details.name)" data-toggle="modal" data-target="#infoModal">Collect
             Pokemon!</button>
         <button class="btn btn-warning mr-2" (click)="back()">Back</button>
+        
     </div>

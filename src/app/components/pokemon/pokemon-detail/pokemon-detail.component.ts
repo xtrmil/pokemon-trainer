@@ -63,4 +63,5 @@ export class PokemonDetailComponent implements OnInit {
     this.location.back();
   }
 
+
 }
