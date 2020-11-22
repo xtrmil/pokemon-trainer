@@ -36,6 +36,6 @@ export class RegisterComponent implements OnInit {
     this.session.save({
       username: result.username
     });
-    this.router.navigateByUrl('/vatalogue');
+    this.router.navigateByUrl('/catalogue');
   }
 }
