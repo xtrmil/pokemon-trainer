@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PokemonListComponent } from './components/pokemon/pokemon-list/pokemon-list.component';
+import { PokemonCatalogueComponent } from './components/pokemon/pokemon-catalogue/pokemon-catalogue.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -21,7 +21,7 @@ component: RegisterComponent
 },
 {
   path: 'catalogue',
-  component: PokemonListComponent,
+  component: PokemonCatalogueComponent,
   canActivate: [ AuthGuard ]
 },
 {

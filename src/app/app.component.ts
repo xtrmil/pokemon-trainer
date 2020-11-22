@@ -14,4 +14,9 @@ export class AppComponent {
   get username() {
     return this.session.get().username;
   }
+
+  status: boolean = false;
+clickEvent(){
+    this.status = !this.status;       
+}
 }
