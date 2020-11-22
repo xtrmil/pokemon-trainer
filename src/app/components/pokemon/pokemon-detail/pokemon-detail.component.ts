@@ -45,13 +45,14 @@ export class PokemonDetailComponent implements OnInit {
           this.abilitiesKeys = Object.keys(data.abilities);
           this.baseStatsKeys = Object.keys(data.stats);
           this.movesKeys = Object.keys(data.moves);
-
-          if (this.collectionService.getAllCollected().includes(data.name) == false) {
-            this.areCollecting = true;
-          } else {
-            this.areCollecting = false;
+          
+          if (this.collectionService.getAllCollected() !== null) {
+            if (this.collectionService.getAllCollected().includes(data.name) == false) {
+              this.areCollecting = true;
+            } else {
+              this.areCollecting = false;
+            }
           }
-
         })
     } catch (e) {
       this.pokemonService = e.message || e;
