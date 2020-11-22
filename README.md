@@ -3,6 +3,8 @@ This is a Pokemon "trainer" application built with Angular.
 
 User inputs his name on register page and can start collecting pokemons.
 
+Catalogue page contains pokemons that can be collected, which shows up on the Collection page after collection.
+
 The pokemon data is provided by [The RESTful Pokémon API.](https://pokeapi.co/)
 
 The application is deployed on Heroku https://pokemon-trainer-angular.herokuapp.com/
