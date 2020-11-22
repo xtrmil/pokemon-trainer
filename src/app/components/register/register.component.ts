@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   constructor(private session: SessionService, private router: Router, private collectionService: CollectionService) {
 
     if (this.session.get() !== false) {
-      this.router.navigateByUrl('/collection');
+      this.router.navigateByUrl('/catalogue');
     }
   }
 
@@ -41,6 +41,6 @@ export class RegisterComponent implements OnInit {
     this.session.save({
       username: result.username
     });
-    this.router.navigateByUrl('/collection');
+    this.router.navigateByUrl('/vatalogue');
   }
 }
