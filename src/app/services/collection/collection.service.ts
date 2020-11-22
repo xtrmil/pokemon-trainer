@@ -31,10 +31,4 @@ export class CollectionService {
     let collected: string[] = JSON.parse(localStorage.getItem('pokemons'));
     return collected;
   }
-  setCollectionStatus(areCollecting: boolean) {
-    this.areCollecting = areCollecting;
-  }
-  getCollectionStatus(): boolean {
-    return this.areCollecting;
-  }
 }

@@ -16,8 +16,7 @@ export class CollectionDashboardComponent implements OnInit {
   haveCollected: boolean;
   constructor(private pokemonService: PokemonService, private collectionService: CollectionService) { }
 
-  async ngOnInit() {
-    this.collectionService.setCollectionStatus(false);
+ ngOnInit() {
     if (this.collectionService.getAllCollected() == null) {
       this.haveCollected = false;
     } else {
