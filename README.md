@@ -4,6 +4,9 @@ Link for application deployed on heroku  [The Pokemon trainer](https://pokemon-t
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
+## Created by
+
+[Christopher Berglund](https://github.com/cberg9) [Jesper Englund](https://github.com/englundjesper) [Emil Oja](https://github.com/xtrmil)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
