@@ -11,9 +11,8 @@
 
             </div>
             <div class="card-footer text-center">
-                <div *ngIf="areCollecting == false"><b>Collected</b></div>
-                 <button *ngIf="areCollecting == true" class="btn btn-dark mr-2" (click)="collect(details.name)">Collect
-            Pokemon</button>
+                <button *ngIf="areCollecting == false" class="btn btn-dark mr-2" disabled><b>Collected</b></button>
+                 <button *ngIf="areCollecting == true" class="btn btn-dark mr-2" [disabled]="clicked" (click)="collect(details.name); clicked = true;">{{buttonText}}</button>
             </div>
         </div>
 
