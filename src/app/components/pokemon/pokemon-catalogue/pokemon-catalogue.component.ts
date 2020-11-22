@@ -4,10 +4,10 @@ import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
-  templateUrl: './pokemon-list.component.html',
-  styleUrls: ['./pokemon-list.component.css']
+  templateUrl: './pokemon-catalogue.component.html',
+  styleUrls: ['./pokemon-catalogue.component.css']
 })
-export class PokemonListComponent implements OnInit {
+export class PokemonCatalogueComponent implements OnInit {
 
   pokemons: any[] = [];
   surveyListError: string | undefined;

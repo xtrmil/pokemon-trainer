@@ -25,7 +25,8 @@
                     <div class="row ml-4">
                         <b>Types:&nbsp;</b>
 
-                        <p *ngFor="let key of typekeys; last as isLast"> {{details.types[key].type.name}}<span *ngIf="!isLast">,&nbsp;</span> </p>
+                        <p *ngFor="let key of typekeys; last as isLast"> {{details.types[key].type.name}}<span
+                                *ngIf="!isLast">,&nbsp;</span> </p>
 
                     </div>
                 </div>
@@ -62,7 +63,7 @@
                     <b>Abilites:&nbsp;</b>
                     <p *ngFor="let key of abilitiesKeys;last as isLast">
                         {{details.abilities[key].ability.name}}<span *ngIf="!isLast">,&nbsp;</span> </p>
-                    
+
                 </div>
 
             </div>
@@ -75,10 +76,11 @@
             </div>
             <div class="card-body" id="movesBody">
                 <div class="scrollable" id="scrollable">
-                <div class="row ml-1 mr-1">
-                    
-                        <span *ngFor="let key of movesKeys; last as isLast">{{details.moves[key].move.name}}<span *ngIf="!isLast">,&nbsp;</span> </span>
-                        
+                    <div class="row ml-1 mr-1">
+
+                        <span *ngFor="let key of movesKeys; last as isLast">{{details.moves[key].move.name}}<span
+                                *ngIf="!isLast">,&nbsp;</span> </span>
+
                     </div>
                 </div>
             </div>
@@ -86,12 +88,8 @@
 
     </div>
 
-
-
-
-
     <div class="row ml-3">
-        <button *ngIf="areCollecting ==true" class="btn btn-primary mr-2" (click)="collect(details.name)" >Collect
+        <button *ngIf="areCollecting ==true" class="btn btn-primary mr-2" (click)="collect(details.name)">Collect
             Pokemon!</button>
         <button class="btn btn-warning mr-2" (click)="back()">Back</button>
     </div>

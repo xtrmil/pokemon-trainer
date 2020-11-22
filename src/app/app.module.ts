@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {PokemonDetailModule } from './components/pokemon/pokemon-detail/pokemon-detail.module';
 import { CollectionDashboardModule } from './components/collection-dashboard/collection-dashboard.module';
-import { PokemonListComponent } from './components/pokemon/pokemon-list/pokemon-list.component';
+import { PokemonCatalogueComponent } from './components/pokemon/pokemon-catalogue/pokemon-catalogue.component';
 import { PokemonCardModule } from './components/pokemon/pokemon-card/pokemon-card.module';
 
 
@@ -15,7 +15,7 @@ import { PokemonCardModule } from './components/pokemon/pokemon-card/pokemon-car
   declarations: [
     AppComponent,
     RegisterComponent,
-    PokemonListComponent,
+    PokemonCatalogueComponent,
     
   ],
   imports: [
