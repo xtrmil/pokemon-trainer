@@ -11,14 +11,13 @@ export class AppComponent {
   title = 'pokemon-trainer';
   constructor(private session: SessionService) { }
 
-  get username() {
-    return this.session.get().username;
-  }
-  
-
   status: boolean = true;
 
   clickEvent(){
     this.status = !this.status;
+  }
+
+  get username() {
+    return this.session.get().username;
   }
 }
