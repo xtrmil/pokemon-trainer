@@ -1,8 +1,11 @@
 # PokemonTrainer
+This is a Pokemon "trainer" application built with Angular.
 
-The application is deployed on Heroku https://pokemon-trainer-angular.herokuapp.com/
+User inputs his name on register page and can start collecting pokemons.
 
 The pokemon data is provided by [The RESTful Pokémon API.](https://pokeapi.co/)
+
+The application is deployed on Heroku https://pokemon-trainer-angular.herokuapp.com/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
