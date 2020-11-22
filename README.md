@@ -1,7 +1,7 @@
 # PokemonTrainer
 
-Link for application deployed on heroku  [The Pokemon trainer](https://pokemon-trainer-angular.herokuapp.com/)
-
+The application is deployed on Heroku https://pokemon-trainer-angular.herokuapp.com/
+The pokemon info for the application is provided by [The RESTful Pokémon API.](https://pokeapi.co/)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
 
