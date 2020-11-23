@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to use
 
-User inputs a name on register page and can the start collecting pokemons.
+User inputs a name on the register page and can the start collecting pokemons.
 
 The catalogue page contains pokemons that are available for collection.
 
