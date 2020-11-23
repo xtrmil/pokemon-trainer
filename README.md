@@ -18,6 +18,8 @@ The catalogue page contains pokemons that are available for collection.
 
 When the user clicks a pokemon card, a detail page is presented with the option to collect the pokemon.
 
+All collected pokemons can be viewed on the collection page.
+
 
 
 
