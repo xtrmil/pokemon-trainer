@@ -14,7 +14,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 User inputs his name on register page and can start collecting pokemons.
 
-Catalogue page contains pokemons that can be collected, which shows up on the Collection page after collection.
+Catalogue page contains pokemons that can be collected.
+
+When the user clicks a pokemon card, a detail page is presented with the option to collect the pokemon.
 
 
 
