@@ -1,5 +1,5 @@
 # Pokemon Trainer
-This is a Pokemon "trainer" application built with Angular.
+This is a Pokemon "trainer" application built with Angular and Bootstrap.
 
 The application is deployed on Heroku https://pokemon-trainer-angular.herokuapp.com/
 
@@ -12,9 +12,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to use
 
-User inputs his name on register page and can start collecting pokemons.
+User inputs a name on register page and can the start collecting pokemons.
 
-Catalogue page contains pokemons that can be collected.
+The catalogue page contains pokemons that are available for collection.
 
 When the user clicks a pokemon card, a detail page is presented with the option to collect the pokemon.
 
