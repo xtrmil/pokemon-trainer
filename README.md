@@ -12,13 +12,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to use
 
-User inputs a name on the register page and can the start collecting pokemons.
+User inputs a name on the register page and can then start collecting pokemons.
 
 The catalogue page contains pokemons that are available for collection.
 
 When the user clicks a pokemon card, a detail page is presented with the option to collect the pokemon.
 
 All collected pokemons can be viewed on the collection page.
+
+All userdata is stored locally.
 
 
 
