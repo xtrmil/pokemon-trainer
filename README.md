@@ -1,7 +1,7 @@
 # PokemonTrainer
 This is a Pokemon "trainer" application built with Angular.
 
-![collection-screenshot](screenshots/pokemon-trainer.JPG)
+![collection-screenshot](pokemon-trainer.JPG)
 
 The pokemon data is provided by [The RESTful Pokémon API.](https://pokeapi.co/)
 
