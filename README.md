@@ -1,4 +1,4 @@
-# PokemonTrainer
+# Pokemon Trainer
 This is a Pokemon "trainer" application built with Angular.
 
 The application is deployed on Heroku https://pokemon-trainer-angular.herokuapp.com/
